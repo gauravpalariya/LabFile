@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday!</title>
+</head>
+<body>
+  <p id="birthdayMessage">Happy Birthday!</p>
+  <script>
+    function updateMessage() {
+      var date = new Date();
+      var hour = date.getHours();
+      if (hour % 1 === 0) { // Check if current hour is divisible by 1 (every hour)
+        document.getElementById("birthdayMessage").textContent = "Happy Birthday!";
+      } else {
+        document.getElementById("birthdayMessage").textContent = "";
+      }
+    }
+
+    updateMessage(); // Call the function initially
+    setInterval(updateMessage, 3600000); // Call the function every hour (3600000 milliseconds)
+  </script>
+</body>
+</html>
